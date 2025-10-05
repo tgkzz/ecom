@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "github.com/tgkzz/ecom/innerpb/auth";
+
+enum OtpStatus {
+  OTP_STATUS_UNSPECIFIED = 0;
+  QUEUED = 1;
+  reserved 2 to 10;
+}

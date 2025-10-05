@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "github.com/tgkzz/ecom/innerpb/auth";
+
+service Auth {
+  rpc Register(RegisterRequest) returns (RegisterResponse);
+}
+
+message RegisterRequest {
+  string phoneNum = 1;
+  string password = 2;
+}
+
+message RegisterResponse {
+  Person person = 1;
+  string otp = 2;
+}
+
+message Person {
+  string id = 1; // TODO: uuid
+  string phoneNum = 2;
+}
